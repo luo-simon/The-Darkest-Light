@@ -82,6 +82,6 @@ public class StatsManager : MonoBehaviour
     private void UpdatePostprocessing()
     {
         volume.profile.TryGet<ColorAdjustments>(out ColorAdjustments colorAdjustments);
-        colorAdjustments.hueShift.value = 180 - ((currentSanity / sanity) * 180);
+        colorAdjustments.hueShift.value = Mathf.MoveTowards(colorAdjustments.hueShift.value, 180 - ((currentSanity / sanity) * 180), Time.deltaTime * 250);
     }
 }
