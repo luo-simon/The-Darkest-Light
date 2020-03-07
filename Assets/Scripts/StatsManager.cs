@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.PostProcessing;
 
 public class StatsManager : MonoBehaviour
 {
@@ -20,6 +23,8 @@ public class StatsManager : MonoBehaviour
 
     public GameObject player;
     public GameObject deathScreen;
+
+    public Volume volume;
 
     public bool gameEnd = false;
 
@@ -59,6 +64,9 @@ public class StatsManager : MonoBehaviour
             gameEnd = true;
             Time.timeScale = 0; 
         }
+
+        UpdatePostprocessing();
+        
     }
 
     public void IncreaseSanity(int amount)
@@ -69,5 +77,11 @@ public class StatsManager : MonoBehaviour
     public void IncreaseHunger(int amount)
     {
         currentHunger += amount;
+    }
+
+    private void UpdatePostprocessing()
+    {
+        volume.profile.TryGet<ColorAdjustments>(out ColorAdjustments colorAdjustments);
+        colorAdjustments.hueShift.value = 180 - ((currentSanity / sanity) * 180);
     }
 }
