@@ -8,20 +8,39 @@ public class ProceduralGeneration : MonoBehaviour
 
     public GameObject[] spawnItems;
 
-    public float maxItems;
+    public int maxItems;
+    private int currentItems;
+
+    public float minDistanceBtwSpawned;
 
     void Awake()
     {
+        currentItems = 0;
         Generate();
     }
     
     private void Generate()
     {
-        for (int i = 0; i < maxItems; i++)
+        for (int i = 0; currentItems < maxItems; i++)
         {
+            Debug.Log("Trying to generate");
             Vector3 randomPos = Random.insideUnitCircle * range;
-            Instantiate(spawnItems[Random.Range(0, spawnItems.Length)], randomPos, Quaternion.identity);
+            if (CheckSpawnPosition(randomPos) == true) // Checks that the spawn position doesn't already have an object there.
+            {
+                Instantiate(spawnItems[Random.Range(0, spawnItems.Length)], randomPos, Quaternion.identity);
+                currentItems++;
+            }
+            
         }
+    }
+
+    private bool CheckSpawnPosition(Vector3 position)
+    {
+        // Tweak 2nd parameter to change minimum distance each object can be from each other
+        if (Physics2D.OverlapCircle(position, minDistanceBtwSpawned) != null)
+            return false;
+        else
+            return true;
     }
 
     private void OnDrawGizmosSelected()
