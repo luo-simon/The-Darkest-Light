@@ -31,6 +31,8 @@ public class StatItem : MonoBehaviour
             playerStatsUpdater.IncreaseSanity(sanityValue);
             GameObject.FindGameObjectWithTag("Score").GetComponent<Score>().IncreaseScore(scoreValue);
             anim.enabled = true;
+            if (anim.parameterCount >= 1)
+                anim.SetTrigger("Pickup");
         }
 
     }

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerValue: 0
   sanityValue: 0
-  scoreValue: 10
+  scoreValue: 5
   anim: {fileID: 6642218127875107164}
   inRange: 0
 --- !u!58 &5477871736630312566
@@ -129,7 +129,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477871736630312565}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 12fdecd09b150fe478906c82b0e4eeb8, type: 2}
   m_CullingMode: 0
@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e45eadb53baba2947a7a07cd52050394, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

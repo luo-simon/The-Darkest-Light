@@ -25,6 +25,7 @@ public class Score : MonoBehaviour
         if (scoreText == null)
             return;
 
+
         scoreText.text = "SCORE: " + (int) score;
         score += Time.deltaTime;
         if ((int)score > PlayerPrefs.GetInt("highscore"))

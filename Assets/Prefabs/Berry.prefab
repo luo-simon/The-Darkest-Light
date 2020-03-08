@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerValue: 10
+  sanityValue: 0
+  scoreValue: 0
   anim: {fileID: 6642218127875107164}
   inRange: 0
 --- !u!58 &5477871736630312566
@@ -148,7 +150,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee66f30dc220f524fb695776312163b3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

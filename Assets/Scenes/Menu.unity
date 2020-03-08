@@ -971,14 +971,24 @@ MonoBehaviour:
   range: 8
   spawnItems:
   - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
+  - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
+  - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
+  - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
   - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 9173718928332876425, guid: ab290235a57682d46bf2a0562494c6f3, type: 3}
   - {fileID: 9173718928332876425, guid: ab69b12adbc12df41b17e143c22f8816, type: 3}
   - {fileID: 9173718928332876425, guid: df1e94e25cdadf841b562e0c6792db79, type: 3}
   - {fileID: 9173718928332876425, guid: 396853a11e9aa1d4191d1f7e722f8685, type: 3}
-  - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
-  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
-  - {fileID: 1803756851147041765, guid: 96aac0dbfa2c0a943b72bbe296b9d46a, type: 3}
-  - {fileID: 5477871736630312565, guid: 20ec5ee09d6937140ba3a3cf0edb6e57, type: 3}
+  - {fileID: 9173718928332876425, guid: df1e94e25cdadf841b562e0c6792db79, type: 3}
+  - {fileID: 9173718928332876425, guid: ab69b12adbc12df41b17e143c22f8816, type: 3}
+  - {fileID: 9173718928332876425, guid: a33893aca1912b54ebef20e1f2a0073a, type: 3}
+  - {fileID: 9173718928332876425, guid: 9220f2f8cb1f869438e55bd9026d32a7, type: 3}
+  - {fileID: 9173718928332876425, guid: ab290235a57682d46bf2a0562494c6f3, type: 3}
+  - {fileID: 9173718928332876425, guid: 3e617e20a75269d4a832491f31566a32, type: 3}
   maxItems: 20
   minDistanceBtwSpawned: 0.6
 --- !u!4 &897199339

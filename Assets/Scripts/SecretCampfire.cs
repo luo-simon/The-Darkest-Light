@@ -7,6 +7,7 @@ public class SecretCampfire : MonoBehaviour
     public float range;
     public Transform player;
     public StatsManager statsManager;
+    public Score score;
 
 
     void Update()
@@ -15,6 +16,7 @@ public class SecretCampfire : MonoBehaviour
         {
             statsManager.IncreaseHunger(50);
             statsManager.IncreaseSanity(50);
+            score.IncreaseScore(-100);
         }
     }
 
