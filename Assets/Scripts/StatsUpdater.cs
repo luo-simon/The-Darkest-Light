@@ -10,4 +10,9 @@ public class StatsUpdater : MonoBehaviour
     {
         statsManager.IncreaseHunger(amount);
     }
+
+    public void IncreaseSanity(int amount)
+    {
+        statsManager.IncreaseSanity(amount);
+    }
 }

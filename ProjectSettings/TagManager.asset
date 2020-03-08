@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Volume
+  - Score
   layers:
   - Default
   - TransparentFX

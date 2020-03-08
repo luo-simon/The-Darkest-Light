@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8196009205e95c3499fad38f509d8a62
+guid: 11cec134fc2f75d458ac2728e846c573
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5034061168752090764
-    second: log_0
+      213: -431813559880033337
+    second: sanity_full_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: log_0
+      name: sanity_full_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 13
-        height: 14
+        x: 14
+        y: 11
+        width: 22
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471a1f2e90c632ab0800000000000000
-      internalID: -5034061168752090764
+      spriteID: 7cb572aead3e10af0800000000000000
+      internalID: -431813559880033337
       vertices: []
       indices: 
       edges: []

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 
 public class StatsManager : MonoBehaviour
 {
@@ -82,6 +82,14 @@ public class StatsManager : MonoBehaviour
     private void UpdatePostprocessing()
     {
         volume.profile.TryGet<ColorAdjustments>(out ColorAdjustments colorAdjustments);
-        colorAdjustments.hueShift.value = Mathf.MoveTowards(colorAdjustments.hueShift.value, 180 - ((currentSanity / sanity) * 180), Time.deltaTime * 250);
+        float huevalue = Mathf.Clamp(180 - ((currentSanity / sanity) * 360), 0, 180);
+        colorAdjustments.hueShift.value = Mathf.MoveTowards(colorAdjustments.hueShift.value, huevalue, Time.deltaTime * 500);
+
+        volume.profile.TryGet<FilmGrain>(out FilmGrain filmGrain);
+        filmGrain.intensity.value = Mathf.MoveTowards(filmGrain.intensity.value, (float)1 - ((currentSanity / sanity) * (float)0.8), Time.deltaTime * 250);
+
+        volume.profile.TryGet<ChromaticAberration>(out ChromaticAberration chromaticAberration);
+        float value = Mathf.Clamp01((0.5f - (currentSanity / sanity) * 0.8f));
+        chromaticAberration.intensity.value = Mathf.MoveTowards(filmGrain.intensity.value, value, 5);
     }
 }

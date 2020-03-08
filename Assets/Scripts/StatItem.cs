@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HungerItem : MonoBehaviour
+public class StatItem : MonoBehaviour
 {
     public int hungerValue;
+    public int sanityValue;
+    public int scoreValue;
 
     private Collider2D col;
     private StatsUpdater playerStatsUpdater;
+
+    public Animator anim;
 
     [SerializeField] private bool inRange = false;
 
@@ -24,7 +28,9 @@ public class HungerItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerStatsUpdater.IncreaseHunger(hungerValue);
-            Destroy(gameObject);
+            playerStatsUpdater.IncreaseSanity(sanityValue);
+            GameObject.FindGameObjectWithTag("Score").GetComponent<Score>().IncreaseScore(scoreValue);
+            anim.enabled = true;
         }
 
     }
@@ -48,5 +54,10 @@ public class HungerItem : MonoBehaviour
             // Player left range
             inRange = false;
         }
+    }
+
+    void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
