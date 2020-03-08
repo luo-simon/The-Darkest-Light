@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Volume
   - Score
+  - Audio
   layers:
   - Default
   - TransparentFX
