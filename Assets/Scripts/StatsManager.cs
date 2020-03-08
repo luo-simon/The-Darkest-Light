@@ -28,6 +28,9 @@ public class StatsManager : MonoBehaviour
 
     public bool gameEnd = false;
 
+    public bool paused = false;
+    public GameObject pauseScreen;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -40,15 +43,17 @@ public class StatsManager : MonoBehaviour
         if (gameEnd == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+            if (Input.GetKey(KeyCode.M))
+                SceneManager.LoadScene(0);
             return;
         } else
         {
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentHunger -= hungerDecreaseRate * Time.deltaTime;
-        } 
+        }
+
+        CheckPause();
 
         currentSanity = Mathf.Clamp(currentSanity, 0, sanity);
         currentHunger = Mathf.Clamp(currentHunger, 0, hunger);
@@ -91,5 +96,24 @@ public class StatsManager : MonoBehaviour
         volume.profile.TryGet<ChromaticAberration>(out ChromaticAberration chromaticAberration);
         float value = Mathf.Clamp01((0.5f - (currentSanity / sanity) * 0.8f));
         chromaticAberration.intensity.value = Mathf.MoveTowards(filmGrain.intensity.value, value, 5);
+    }
+
+    private void CheckPause()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (paused)
+            {
+                pauseScreen.SetActive(false);
+                Time.timeScale = 1f;
+                paused = false;
+                
+            } else
+            {
+                pauseScreen.SetActive(true);
+                Time.timeScale = 0f;
+                paused = true;
+            }
+        }
     }
 }
